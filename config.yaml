@@ -1,0 +1,9 @@
+# -*- coding: UTF-8 -*-
+cheak_file: 'C:/Users/Seele/Desktop/0'
+#检测文件是否存在
+work_path: './getImage'
+#图片存储目录
+run_timesleep: 10
+#系统启动后何时开始
+camera_timesleep: 1
+#两张照片间隔时间（最低1）
