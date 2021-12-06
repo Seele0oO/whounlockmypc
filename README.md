@@ -1,8 +1,8 @@
 ## It just a demo! ##
-## who unlock my pc!
+# who unlock my pc!
 ## How do you do this?
 Facial recognition
-### How does it work?
+## How does it work?
 (Start with camera_new.py)
 1. Put your image in . /face_recognize/goodImage
 2. use getImage to determine if the image is correct
