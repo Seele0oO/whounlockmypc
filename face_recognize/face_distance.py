@@ -1,5 +1,6 @@
-import face_recognition,os
-def face_distance( getimages ):
+import face_recognition,os,root
+root = root.cwd()
+def face_distance(getImage):
     # Often instead of just checking if two faces match or not (True or False), it's helpful to see how similar they are.
     # You can do that by using the face_distance function.
 
@@ -11,12 +12,12 @@ def face_distance( getimages ):
     # smaller distance are more similar to each other than ones with a larger distance.
 
     # Load some images to compare against
-    os.chdir("./face_recognize/goodImage/")
+    os.chdir(root+"/face_recognize/goodImage")
     myimagelist =[]
     for img in os.listdir("./"):
         imgurl = "./"+img
         myimagelist.append(imgurl)
-        print(myimagelist)
+        # print(myimagelist)
 
 
     known_face_0 = face_recognition.load_image_file(myimagelist[0])
@@ -50,7 +51,7 @@ def face_distance( getimages ):
         known_face_1_encoding,
         known_face_2_encoding,
         known_face_3_encoding,
-        known_face_4_encoding,
+        known_face_4_encoding
         # known_face_5_encoding,
         # known_face_6_encoding,
         # known_face_7_encoding,
@@ -59,9 +60,9 @@ def face_distance( getimages ):
     ]
 
     # Load a test image and get encondings for it
-    image_to_test = face_recognition.load_image_file("./myimage/tianlong1.jpg")
+    os.chdir(root)
+    image_to_test = face_recognition.load_image_file(getImage)
     image_to_test_encoding = face_recognition.face_encodings(image_to_test)[0]
-
     # See how far apart the test image is from the known faces
     face_distances = face_recognition.face_distance(known_encodings, image_to_test_encoding)
 
@@ -74,10 +75,13 @@ def face_distance( getimages ):
         # print("- With a normal cutoff of 0.6, would the test image match the known image? {}".format(face_distance < 0.6))
         # print("- With a very strict cutoff of 0.5, would the test image match the known image? {}".format(face_distance < 0.5))
         # print()
-        print("测试图片和已知图片距离为 {:.2} #第{}次测试".format(face_distance, i+1))
-        print("- 在正常截止点为0.6的情况下，测试图像是否与已知图像相匹配？ {}".format(face_distance < 0.6))
-        print("- 在非常严格的0.5分界线的情况下，测试图像是否与已知图像相匹配？ {}".format(face_distance < 0.5))
-        print()
+
+        # print("测试图片和已知图片距离为 {:.2} #第{}次测试".format(face_distance, i+1))
+        # print("- 在正常截止点为0.6的情况下，测试图像是否与已知图像相匹配？ {}".format(face_distance < 0.6))
+        # print("- 在非常严格的0.5分界线的情况下，测试图像是否与已知图像相匹配？ {}".format(face_distance < 0.5))
         face_distances_available.append(face_distance)
 
     return face_distances_available
+# if __name__ == "__main__":
+#     getImage = '/home/seele/Documents/GitHub/Python/doitmyself/camera/getImage/2021-12-05-22-21-38.jpg'
+#     face_distance(getImage)

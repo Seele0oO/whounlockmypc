@@ -1,7 +1,8 @@
 # -*- coding: UTF-8 -*-
 cheak_file: 'C:/Users/Seele/Desktop/0'
+##废弃
 #检测文件是否存在
-work_path: './getImage'
+work_path: 'face_recognize/yourImage'
 #图片存储目录
 run_timesleep: 10
 #系统启动后何时开始
