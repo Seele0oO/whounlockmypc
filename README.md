@@ -8,10 +8,13 @@ Facial recognition
 2. use getImage to determine if the image is correct
 3. the intruder's image will be displayed in . /Intruder.
 
-Windows Task Scheduler
-I don't know how to create a Windows task scheduler.
+You can use Windows Task Scheduler to start it silently.
 
-##Note
+but I don't know how to create a Windows task scheduler.
+
+## Note
 The "getImage" folder is empty after each judgment.
+
+The environment may not easy to create.
 
 Translated with www.DeepL.com/Translator (free version)
